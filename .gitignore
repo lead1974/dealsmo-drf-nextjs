@@ -1,130 +1,90 @@
-# Global IDE and system files
-.vscode
-.idea
-.DS_Store
-
-# Django backend specific
-staticfiles/
-misc/
-.envs/*
-!.envs/.env.example
-
-# Byte-compiled / optimized / DLL files for Python
+# Python/Django
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports for Python
-htmlcov/
-.tox/
-.nox/
+*.log
+*.pot
+*.pyc
+*.pyo
 .coverage
 .coverage.*
-.cache
-nosetests.xml
 coverage.xml
 *.cover
-*.py,cover
-.hypothesis/
 .pytest_cache/
-cover/
-
-# Translations for Django
-*.mo
-*.pot
+.tox/
+.nox/
+.cache
+htmlcov/
 
 # Django specific
-*.log
-local_settings.py
+/staticfiles/
+/mediafiles/
 db.sqlite3
 db.sqlite3-journal
+local_settings.py
 
-# Environment files for backend and frontend
+# Environment files
 .env
+.env.*
+.envs/
 .venv
 env/
 venv/
 ENV/
-env.bak/
-venv.bak/
 
-# Python project settings
-.spyderproject
-.spyproject
-.ropeproject
+# Dependencies & packaging
+*.egg-info/
+dist/
+build/
+wheels/
+*.egg
 
-# Celery stuff
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.iml
+*.iws
+.idea_modules/
+*.code-workspace
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Docker
+docker-compose.override.yml
+postgres_data/
+
+# Frontend (Next.js)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/coverage/
+frontend/.env*
+frontend/.vercel
+frontend/*.tsbuildinfo
+frontend/next-env.d.ts
+frontend/.pnp/
+frontend/.pnp.js
+frontend/.yarn/install-state.gz
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Celery
 celerybeat-schedule
 celerybeat.pid
 
-# Poetry, pipenv, pdm dependencies
+# Poetry, pipenv, pdm
 Pipfile.lock
 poetry.lock
 pdm.lock
 .pdm.toml
 .pdm-python
 .pdm-build/
-
-# Cython debug symbols
-cython_debug/
-
-# Frontend (Next.js) specific
-frontend/.next/
-frontend/out/
-frontend/build/
-frontend/coverage/
-frontend/.DS_Store
-frontend/*.pem
-
-# Local env files for frontend
-frontend/.env*
-frontend/.env*.local
-
-# Debug logs for frontend
-frontend/npm-debug.log*
-frontend/yarn-debug.log*
-frontend/yarn-error.log*
-
-# Vercel
-frontend/.vercel
-
-# Typescript
-frontend/*.tsbuildinfo
-frontend/next-env.d.ts
-
-# Ignore node_modules for frontend
-frontend/node_modules/
-frontend/.pnp/
-frontend/.pnp.js
-frontend/.yarn/install-state.gz

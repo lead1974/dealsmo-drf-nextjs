@@ -45,9 +45,9 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "core_apps.issues",
     "core_apps.users",
     "core_apps.common",
+    "core_apps.issues",
     "core_apps.profiles",
     "core_apps.ratings",
     "core_apps.posts",
