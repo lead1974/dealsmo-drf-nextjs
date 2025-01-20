@@ -12,7 +12,7 @@ down-v:
 	docker compose -f local.yml down -v
 
 show-logs:
-	docker compose -f local.yml logs
+	docker compose -f local.yml logs21QAQEER
 
 show-logs-api:
 	docker compose -f local.yml logs api
