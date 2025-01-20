@@ -1,0 +1,58 @@
+services:
+  backend: &backend
+    build:
+      context: .
+      dockerfile: ./backend/docker/local/django/Dockerfile
+    image: dealsmo_backend
+    container_name: dealsmo_backend
+    volumes:
+      - ./backend:/app:z
+      - ./staticfiles:/app/staticfiles
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.envs/.env.local
+    depends_on:
+      - postgres
+      - mailpit
+    command: /start
+    networks:
+      - dealsmo_nw
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./backend/docker/local/postgres/Dockerfile
+    image: dealsmo_postgres
+    container_name: dealsmo_postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - dealsmo_postgres_data:/var/lib/postgresql/data
+    env_file:
+      - ./backend/.envs/.env.local
+    networks:
+      - dealsmo_nw
+
+  mailpit:
+    image: docker.io/axllent/mailpit:v1.15
+    container_name: dealsmo_mailpit
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+    volumes:  
+      - dealsmo_mailpit_data:/data
+    environment:
+      MP_MAX_MESSAGES: 5000
+      MP_DATA_FILE: /data/mailpit.db
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1  
+    networks:
+      - dealsmo_nw
+
+networks:
+  dealsmo_nw:
+
+volumes:
+  dealsmo_postgres_data: {}
+  dealsmo_mailpit_data: {}

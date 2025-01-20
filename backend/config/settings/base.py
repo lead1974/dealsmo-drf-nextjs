@@ -139,7 +139,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "Africa/Kigali"
+TIME_ZONE = "USA/Los_Angeles"
 
 USE_I18N = True
 
@@ -162,3 +162,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 TAGGIT_CASE_INSENSITIVE = True
+
+AUTH_USER_MODEL = "users.User"

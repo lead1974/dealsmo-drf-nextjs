@@ -45,3 +45,5 @@ LOGGING = {
     },
     "root": {"level": "INFO", "handlers": ["console"]},
 }
+
+TIME_ZONE = "America/Los_Angeles"
