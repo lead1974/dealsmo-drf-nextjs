@@ -4,9 +4,34 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
+django = "==5.1.5"
+python-dotenv = "*"
+djangorestframework = "*"
+django-autoslug = "*"
+django-countries = "*"
+django-phonenumber-field = "*"
+phonenumbers = "*"
+drf-yasg = "*"
+Pillow = "*"
+argon2-cffi = "*"
+djoser = "*"
+django-taggit = "*"
+django-filter = "*"
+django-celery-email = "*"
+cloudinary = "*"
+redis = "*"
+celery = "*"
+flower = "*"
+django-jazzmin = "*"
+gunicorn = "*"
+django-celery-beat = "*"
+social-auth-app-django = "*"
+setuptools = "*"
 
 [dev-packages]
+psycopg = {extras = ["binary"]}
+watchfiles = "*"
+black = "*"
 
 [requires]
 python_version = "3.13"
