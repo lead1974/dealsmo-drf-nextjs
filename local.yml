@@ -50,6 +50,22 @@ services:
     networks:
       - dealsmo_nw
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./docker/local/Dockerfile
+    container_name: dealsmo_frontend
+    image: dealsmo_frontend
+    ports:
+      - "3000:3000"
+    # expose:
+    #   - "3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - dealsmo_nw
+
 networks:
   dealsmo_nw:
     external: true
