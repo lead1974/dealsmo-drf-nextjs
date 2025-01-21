@@ -7,7 +7,7 @@ services:
     container_name: dealsmo_backend
     volumes:
       - ./backend:/app:z
-      - ./staticfiles:/app/staticfiles
+      - ./backend/staticfiles:/app/staticfiles
     ports:
       - "8000:8000"
     env_file:
@@ -52,6 +52,7 @@ services:
 
 networks:
   dealsmo_nw:
+    external: true
 
 volumes:
   dealsmo_postgres_data: {}
