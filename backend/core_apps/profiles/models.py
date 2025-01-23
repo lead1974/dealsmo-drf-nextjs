@@ -28,7 +28,7 @@ class Profile(TimeStampedModel):
         Customer_Support = ("customer_support", _("Customer Support"))
         Data_Analyst = ("data_analyst", _("Data Analyst"))
         Graphic_Designer = ("graphic_designer", _("Graphic Designer"))
-        Legal_Compliance = ("lega_compliance", _("Legal Compliance"))
+        Legal_Compliance = ("legal_compliance", _("Legal Compliance"))
         User = ("user", _("User"))
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
