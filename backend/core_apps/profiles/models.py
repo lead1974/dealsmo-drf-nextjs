@@ -29,8 +29,8 @@ class Profile(TimeStampedModel):
         Data_Analyst = ("data_analyst", _("Data Analyst"))
         Graphic_Designer = ("graphic_designer", _("Graphic Designer"))
         Legal_Compliance = ("legal_compliance", _("Legal Compliance"))
-        User = ("user", _("User"))
-
+        TENANT = ("tenant", _("Tenant"))
+        
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     avatar = CloudinaryField(verbose_name=_("Avatar"), blank=True, null=True)
     gender = models.CharField(
@@ -44,7 +44,7 @@ class Profile(TimeStampedModel):
         verbose_name=_("Occupation"),
         max_length=20,
         choices=Occupation.choices,
-        default=Occupation.User,
+        default=Occupation.TENANT,
     )
     phone_number = PhoneNumberField(
         verbose_name=_("Phone Number"), max_length=30, default="+250784123456"
