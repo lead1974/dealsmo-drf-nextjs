@@ -1,3 +1,6 @@
+# project structure command 
+tree -I 'venv|__pycache__|*.pyc|*.pyo|*.pyd|.git' > project_structure.txt
+
 # pipenv
 pipenv -rm 
 pipenv install

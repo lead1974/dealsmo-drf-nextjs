@@ -22,7 +22,7 @@ class Profile(TimeStampedModel):
         OTHER = ("other", _("Other"))
 
     class Occupation(models.TextChoices):
-        Developer = ("developer", _("Developer"))
+        Admin = ("admin", _("Administrator"))
         Content_Manager = ("content_manager", _("Content Manager"))
         Digital_Marketing = ("digital_marketing", _("Digital Marketing"))
         Customer_Support = ("customer_support", _("Customer Support"))
