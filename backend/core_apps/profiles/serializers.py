@@ -1,5 +1,6 @@
 from django_countries.serializer_fields import CountryField
 from rest_framework import serializers
+from django.db.models import Avg
 
 from .models import Profile
 
@@ -12,7 +13,7 @@ class ProfileSerializer(serializers.ModelSerializer):
     country_of_origin = CountryField(name_only=True)
     avatar = serializers.SerializerMethodField()
     date_joined = serializers.DateTimeField(source="user.date_joined", read_only=True)
-    # apartment = serializers.SerializerMethodField()
+    average_rating = serializers.SerializerMethodField()
 
     class Meta:
         model = Profile
@@ -31,7 +32,7 @@ class ProfileSerializer(serializers.ModelSerializer):
             "reputation",
             "date_joined",
             "avatar",
-            # "apartment",
+            "average_rating",
         ]
 
     def get_avatar(self, obj: Profile) -> str | None:
@@ -39,11 +40,13 @@ class ProfileSerializer(serializers.ModelSerializer):
             return obj.avatar.url
         except AttributeError:
             return None
-
-    # def get_apartment(self, obj: Profile) -> None:
-    #     if apartment := obj.user.apartment.first():
-    #         return ApartmentSerializer(apartment).data
-    #     return None
+        
+    def get_average_rating(self):
+            average = self.user.received_ratings.aggregate(Avg("rating"))["rating__avg"]
+            return average if average is not None else 0.0    
+    
+    def get_average_rating(self, obj: Profile):
+        return obj.get_average_rating()
 
 
 class UpdateProfileSerializer(serializers.ModelSerializer):
