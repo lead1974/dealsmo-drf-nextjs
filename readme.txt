@@ -46,6 +46,8 @@ python manage.py startapp ratings
 python manage.py runserver
 
 # docker setup
+docker system prune -f
+
 # check local.yml file for docker
 docker compose -f local.yml config
 # docker create network
@@ -68,5 +70,26 @@ docker compose -f local.yml run --rm backend python manage.py createsuperuser
 python -c "import secrets; print(secrets.token_urlsafe(38))"
 
 
+####### NEXT.JS #########
+npm i -D eslint-config-standard@17.1.0 eslint-plugin-tailwindcss@3.14.1 eslint-config-pret
+tier@9.1.0 prettier@3.2.4 sharp@0.33.2
 
+#80 nextjs packages
+npm i @heroicons/react 
+npx shadcn@latest init -d --verbose
 
+#83 dark/light themes
+npm i next-themes
+
+#85 shadcn components
+npx shadcn@latest add dropdown-menu badge button avatar form card input label menubar pagination skeleton sheet tabs textarea select
+
+npm install @radix-ui/react-icons
+npm i date-fns
+
+# Adding new API endpint for 'report' in this nextjs "fronend" project
+1. Add typedTag to baseApiSlice.ts : 'Report'
+2. Add new folder under lib/redux/features/reports
+3. Add new validattionSchema to 'reports' : ReportCreateSchema.ts
+4. Add new report schema to index.ts 
+5. Add new endpoint to reportApiSlice.ts
