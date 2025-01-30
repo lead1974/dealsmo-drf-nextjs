@@ -1,3 +1,5 @@
+.PHONY: frontend
+
 network:
 	docker network create dealsmo_nw || true
 
@@ -40,3 +42,6 @@ mailpit-volume:
 
 dealsmo-db:
 	docker compose -f local.yml exec postgres psql --username=balda --dbname=dealsmodb
+
+frontend: 
+	docker compose -f local.yml stop frontend && docker compose -f local.yml rm -f frontend && rm -rf frontend/.next frontend/node_modules && docker compose -f local.yml build --no-cache frontend && docker compose -f local.yml up -d frontend

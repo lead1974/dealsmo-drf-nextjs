@@ -71,12 +71,11 @@ python -c "import secrets; print(secrets.token_urlsafe(38))"
 
 
 ####### NEXT.JS #########
-npm i -D eslint-config-standard@17.1.0 eslint-plugin-tailwindcss@3.14.1 eslint-config-pret
-tier@9.1.0 prettier@3.2.4 sharp@0.33.2
+npm i -D eslint-config-standard@17.1.0 eslint-plugin-tailwindcss@3.14.1 eslint-config-prettier@9.1.0 prettier@3.2.4 sharp@0.33.2
 
 #80 nextjs packages
 npm i @heroicons/react 
-npx shadcn@latest init -d --verbose
+npx shadcn@latest init
 
 #83 dark/light themes
 npm i next-themes
