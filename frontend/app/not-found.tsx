@@ -1,4 +1,4 @@
-import shockedFace from "@/../public/assets/icons/shocked-face.svg";
+import shockedFace from "@/public/assets/icons/shocked-face.svg";
 import Image from "next/image";
 import Link from "next/link";
 

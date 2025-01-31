@@ -19,17 +19,9 @@ export default function Layout({ children }: LayoutProps) {
 			<main className="bg-babyPowder dark:bg-veryBlack relative min-h-screen">
 				<Navbar />
 				<div className="flex">
-					{/* placeholder LeftNavbar component */}
-					<div className="text-deepBlueGrey dark:text-pumpkin hidden text-xl md:block">
-						Left Navbar
-					</div>
 					<section className="flex min-h-screen flex-1 flex-col px-4 pb-6 pt-24 sm:px-6 lg:px-8 lg:pt-32">
 						<div>{children}</div>
 					</section>
-					{/* placeholder right navbar component */}
-					<div className="text-deepBlueGrey dark:text-pumpkin hidden text-xl md:block">
-						Right Navbar
-					</div>
 				</div>
 			</main>
 		</ThemeProvider>

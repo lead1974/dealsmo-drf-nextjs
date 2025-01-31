@@ -57,21 +57,21 @@ services:
     networks:
       - dealsmo_nw
 
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: ./docker/local/Dockerfile
-    container_name: dealsmo_frontend
-    image: dealsmo_frontend
-    # ports:
-    #   - "3000:3000"
-    expose:
-      - "3000"
-    volumes:
-      - ./frontend:/app
-      - frontend_data:/app/node_modules
-    networks:
-      - dealsmo_nw
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: ./docker/local/Dockerfile
+  #   container_name: dealsmo_frontend
+  #   image: dealsmo_frontend
+  #   # ports:
+  #   #   - "3000:3000"
+  #   expose:
+  #     - "3000"
+  #   volumes:
+  #     - ./frontend:/app
+  #     - frontend_data:/app/node_modules
+  #   networks:
+  #     - dealsmo_nw
 
   redis:
     image: redis:7.0-alpine3.19
@@ -136,5 +136,5 @@ volumes:
   dealsmo_postgres_data: {}
   dealsmo_mailpit_data: {}
   logs_store: {}
-  frontend_data: {}
+  # frontend_data: {}
   dealsmo_redis_data: {}
