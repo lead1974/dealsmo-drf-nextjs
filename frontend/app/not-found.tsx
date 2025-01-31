@@ -6,7 +6,7 @@ export default function NotFound() {
 	return (
 		<>
 			<main className="flex h-screen flex-col items-center justify-center bg-black px-6 py-16 sm:py-24 lg:scroll-px-28">
-				<div className="relative h-[200px] w-[200px]">
+				<div className="relative size-[200px]">
 					<Image
 						src={shockedFace}
 						alt="shocked-face 404"
@@ -25,7 +25,7 @@ export default function NotFound() {
 					<div className="mt-10 flex justify-center gap-x-6">
 						<Link
 							href="/"
-							className="bg-electricIndigo rounded-3xl px-3 py-2 text-lg font-semibold text-white shadow-sm hover:bg-lime-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:px-3.5 sm:py-2.5 sm:text-2xl"
+							className="bg-electricIndigo inline-block rounded-3xl px-3 py-2 text-lg font-semibold text-white shadow-sm hover:bg-lime-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:px-3.5 sm:py-2.5 sm:text-2xl"
 						>
 							Go back home
 						</Link>

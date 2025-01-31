@@ -23,9 +23,9 @@ export default function HomePage() {
 					className="brightness-50"
 				/>
 			</div>
-			<main className="relative z-10 flex min-h-screen items-center justify-center">
+			<main className="relative z-10 flex items-center justify-center min-h-screen">
 				<div className="container mx-auto px-4 text-center">
-					<h1 className="font-robotoSlab mb-6 text-4xl font-semibold text-cyan-400 antialiased sm:text-6xl md:text-8xl">
+					<h1 className="mb-6 text-4xl font-semibold text-cyan-400 antialiased font-robotoSlab sm:text-6xl md:text-8xl">
 						Welcome to Alpha Apartments
 					</h1>
 					<p className="mb-8 text-2xl text-teal-300 sm:text-4xl">
@@ -34,7 +34,7 @@ export default function HomePage() {
 					<Link 
 						href="/register" 
 						prefetch={false}
-						className="bg-asparagus inline-block rounded-3xl px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-lime-700 sm:text-2xl"
+						className="inline-block rounded-3xl bg-asparagus px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-lime-700 sm:text-2xl"
 					>
 						<span className="inline-flex items-center">
 							Create Your Account

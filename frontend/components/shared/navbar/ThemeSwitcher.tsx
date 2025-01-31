@@ -24,7 +24,7 @@ export default function ThemeSwitcher() {
 		<DropdownMenu>
 			<DropdownMenuTrigger
 				asChild
-				className="cursor-pointer border-none bg-transparent shadow-none"
+				className="cursor-pointer bg-transparent border-none shadow-none"
 			>
 				<Button size="icon">
 					<SunIcon
@@ -44,13 +44,13 @@ export default function ThemeSwitcher() {
 			</DropdownMenuTrigger>
 			<DropdownMenuContent
 				align="end"
-				className="bg-babyPowder dark:bg-richBlack cursor-pointer rounded-md p-2"
+				className="cursor-pointer rounded-md bg-babyPowder p-2 dark:bg-richBlack"
 			>
 				{themeOptions.map(({ value, label }) => (
 					<DropdownMenuItem
 						key={value}
 						onClick={() => setTheme(value)}
-						className={`hover:bg-richBlack dark:hover:bg-gray cursor-pointer ${theme === "light" && value === "light" ? "text-pumpkin" : theme === "dark" && value === "dark" ? "text-blue-400" : theme === "light" ? "text-richBlack hover:text-babyPowder" : "text-babyPowder"}`}
+						className={`cursor-pointer hover:bg-richBlack dark:hover:bg-gray ${theme === "light" && value === "light" ? "text-pumpkin" : theme === "dark" && value === "dark" ? "text-blue-400" : theme === "light" ? "text-richBlack hover:text-babyPowder" : "text-babyPowder"}`}
 					>
 						{label}
 					</DropdownMenuItem>
