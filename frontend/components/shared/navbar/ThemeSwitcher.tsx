@@ -18,13 +18,14 @@ const themeOptions = [
 export default function ThemeSwitcher() {
 	const { theme, setTheme } = useTheme();
 
-	console.log('ThemeSwitcher rendered with theme:', theme);
+	// console.log('Current theme:', theme);
+
 
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger
 				asChild
-				className="cursor-pointer bg-transparent border-none shadow-none"
+				className="cursor-pointer border-none bg-transparent shadow-none"
 			>
 				<Button size="icon">
 					<SunIcon
@@ -44,17 +45,24 @@ export default function ThemeSwitcher() {
 			</DropdownMenuTrigger>
 			<DropdownMenuContent
 				align="end"
-				className="cursor-pointer rounded-md bg-babyPowder p-2 dark:bg-richBlack"
+				className="bg-babyPowder dark:bg-richBlack cursor-pointer rounded-md p-2"
 			>
-				{themeOptions.map(({ value, label }) => (
-					<DropdownMenuItem
-						key={value}
-						onClick={() => setTheme(value)}
-						className={`cursor-pointer hover:bg-richBlack dark:hover:bg-gray ${theme === "light" && value === "light" ? "text-pumpkin" : theme === "dark" && value === "dark" ? "text-blue-400" : theme === "light" ? "text-richBlack hover:text-babyPowder" : "text-babyPowder"}`}
-					>
-						{label}
-					</DropdownMenuItem>
-				))}
+				{themeOptions.map(({ value, label }) => {
+					// console.log('Rendering option:', label);
+					return (
+						<DropdownMenuItem
+							key={value}
+							onClick={() => {
+								// console.log('Setting theme to:', value);
+								setTheme(value);
+							}}
+							className="cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800"
+							// className={`hover:bg-richBlack dark:hover:bg-gray cursor-pointer ${theme === "light" && value === "light" ? "text-pumpkin" : theme === "dark" && value === "dark" ? "text-blue-400" : theme === "light" ? "text-richBlack hover:text-babyPowder" : "text-babyPowder"}`}
+						>
+							{label}
+						</DropdownMenuItem>
+					);
+				})}
 			</DropdownMenuContent>
 		</DropdownMenu>
 	);

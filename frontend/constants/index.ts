@@ -33,7 +33,7 @@ export const occupationOptions = [
 
 export const leftNavLinks: LeftNavLink[] = [
 	{
-		path: "/welcome",
+		path: "/",
 		label: "Home",
 		imgLocation: "/assets/icons/home.svg",
 	},
