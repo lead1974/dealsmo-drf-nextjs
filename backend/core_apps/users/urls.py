@@ -1,12 +1,16 @@
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 
 from .views import (
     CustomProviderAuthView,
     CustomTokenObtainPairView,
     CustomTokenRefreshView,
     LogoutAPIView,
+    UserCreateView,
+    TokenView,
+    MeView,
 )
 
+app_name = 'user'
 
 urlpatterns = [
     re_path(
@@ -14,7 +18,10 @@ urlpatterns = [
         CustomProviderAuthView.as_view(),
         name="provider-auth",
     ),
-    path("login/", CustomTokenObtainPairView.as_view()),
-    path("refresh/", CustomTokenRefreshView.as_view()),
-    path("logout/", LogoutAPIView.as_view()),
+    path("create/", UserCreateView.as_view(), name="create"),
+    path("token/", TokenView.as_view(), name="token"),
+    path("me/", MeView.as_view(), name="me"),
+    path("login/", CustomTokenObtainPairView.as_view(), name="login"),
+    path("refresh/", CustomTokenRefreshView.as_view(), name="refresh"),
+    path("logout/", LogoutAPIView.as_view(), name="logout"),
 ]

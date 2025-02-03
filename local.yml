@@ -123,8 +123,8 @@ services:
     volumes:
       - ./backend/staticfiles:/app/staticfiles
       - logs_store:/var/log/nginx
-    # depends_on:
-    #   - backend
+    depends_on:
+      - backend
     #   - frontend
     networks:
       - dealsmo_nw 

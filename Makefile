@@ -46,5 +46,11 @@ dealsmo-db:
 frontend: 
 	docker compose -f local.yml stop frontend && docker compose -f local.yml rm -f frontend && rm -rf frontend/.next frontend/node_modules && docker compose -f local.yml build --no-cache frontend && docker compose -f local.yml up -d frontend
 
+test:
+	docker compose -f local.yml run --rm backend python manage.py test
+
+test-v:
+	docker compose -f local.yml run --rm backend python manage.py test -v 2
+
 flake8:
 	docker compose -f local.yml run --rm backend sh -c "flake8"

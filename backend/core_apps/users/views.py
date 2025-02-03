@@ -7,6 +7,9 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework import generics
+from .serializers import UserSerializer
+from django.contrib.auth import get_user_model
 
 logger = logging.getLogger(__name__)
 
@@ -128,3 +131,21 @@ class LogoutAPIView(APIView):
         response.delete_cookie("refresh")
         response.delete_cookie("logged_in")
         return response
+
+
+class UserCreateView(generics.CreateAPIView):
+    """View to create a new user."""
+    serializer_class = UserSerializer
+    queryset = get_user_model().objects.all()
+
+
+class TokenView(APIView):
+    """View to handle token-related requests."""
+    def get(self, request: Request, *args, **kwargs) -> Response:
+        return Response({'message': 'Token endpoint'})
+
+
+class MeView(APIView):
+    """View to handle requests to the 'me' endpoint."""
+    def get(self, request: Request, *args, **kwargs) -> Response:
+        return Response({'message': 'Me endpoint'})
