@@ -116,15 +116,16 @@ services:
     build:
       context: ./backend/docker/local/nginx
       dockerfile: Dockerfile
-    restart: always
+    # restart: always
     container_name: dealsmo_nginx
     ports:
       - "8080:80"
     volumes:
       - ./backend/staticfiles:/app/staticfiles
       - logs_store:/var/log/nginx
-    depends_on:
-      - backend
+    # depends_on:
+    #   - backend
+    #   - frontend
     networks:
       - dealsmo_nw 
 
@@ -136,5 +137,5 @@ volumes:
   dealsmo_postgres_data: {}
   dealsmo_mailpit_data: {}
   logs_store: {}
-  # frontend_data: {}
+  frontend_data: {}
   dealsmo_redis_data: {}
